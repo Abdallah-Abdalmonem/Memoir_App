@@ -7,12 +7,12 @@ import '../../constant/app_routes.dart';
 import '../../controllers/home_controller.dart';
 import '../../helper/toast_helper.dart';
 import '../../models/note_model.dart';
+import '../widgets/custom_search_bar.dart';
 import '../widgets/custom_textfield.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import 'package:get/get.dart';
 
-import '../../constant/app_keys.dart';
 import '../../helper/cache_helper.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/custom_select_color.dart';
@@ -26,7 +26,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       drawer: drawerBuilder(controller),
       backgroundColor: Colors.white,
-      appBar: appBarBuilder(controller),
+      appBar: appBarBuilder(controller, context),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: RefreshIndicator(
@@ -113,7 +113,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  AppBar appBarBuilder(HomeController controller) {
+  AppBar appBarBuilder(HomeController controller, BuildContext context) {
     return AppBar(
       leading: Builder(builder: (context) {
         return IconButton(
@@ -138,6 +138,17 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       elevation: 0,
       actions: [
+        IconButton(
+            onPressed: () async {
+              await showSearch(
+                context: context,
+                delegate: CustomSearchDelegate(controller: controller),
+              );
+            },
+            icon: const Icon(
+              Icons.search,
+              color: Colors.black,
+            )),
         PopupMenuButton(
           icon: const Icon(
             Icons.more_vert,
@@ -429,10 +440,11 @@ class CustomListTile extends StatelessWidget {
                 ),
               ],
             ),
-            const Divider(),
+            const Divider(color: Colors.white),
             const SizedBox(height: 10),
             Text(
               '${controller.notesList[index].note}',
+              textAlign: TextAlign.center,
               style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
@@ -445,20 +457,26 @@ class CustomListTile extends StatelessWidget {
               maxLines: 8,
             ),
             const SizedBox(height: 2),
-            const Divider(),
+            const Divider(color: Colors.white),
             const SizedBox(height: 2),
-            Text(
-              '${controller.notesList[index].createdOn?.toDate()}',
-              maxLines: 5,
-              style: TextStyle(
-                  fontSize: 14,
-                  letterSpacing: 1,
-                  color:
-                      //  controller.notesList[index]['color']
-                      listTileColor == Colors.black
-                          ? Colors.white
-                          : Colors.black,
-                  overflow: TextOverflow.ellipsis),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  '${controller.notesList[index].createdOn?.toDate().year}-${controller.notesList[index].createdOn?.toDate().month}-${controller.notesList[index].createdOn?.toDate().day}\n${controller.notesList[index].createdOn?.toDate().hour}:${controller.notesList[index].createdOn?.toDate().minute}:${controller.notesList[index].createdOn?.toDate().second}',
+                  maxLines: 2,
+                  textAlign: TextAlign.right,
+                  style: TextStyle(
+                      fontSize: 14,
+                      letterSpacing: 1,
+                      color:
+                          //  controller.notesList[index]['color']
+                          listTileColor == Colors.black
+                              ? Colors.white
+                              : Colors.black,
+                      overflow: TextOverflow.ellipsis),
+                ),
+              ],
             ),
           ],
         ),

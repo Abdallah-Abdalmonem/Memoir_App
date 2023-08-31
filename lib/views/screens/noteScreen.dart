@@ -9,7 +9,7 @@ class NoteScreen extends StatelessWidget {
   NoteScreen({super.key});
   final NoteModel noteData = Get.arguments;
 
-  late final ValueNotifier<double> fontSizeValue;
+  late final ValueNotifier<double> fontSizeValue = ValueNotifier<double>(16);
 
   bool isArabic() {
     if (noteData.note![0].codeUnits[0] >= 0x0600 &&
@@ -21,7 +21,6 @@ class NoteScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    fontSizeValue = ValueNotifier<double>(16);
     return Scaffold(
       extendBodyBehindAppBar: true,
       backgroundColor: Color(int.parse('${noteData.color}')).withOpacity(.9),
