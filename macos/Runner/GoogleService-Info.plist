@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>44448392554-u86pk5qiocdqoc9vs0f0fgqt8iqvkb2a.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.44448392554-u86pk5qiocdqoc9vs0f0fgqt8iqvkb2a</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDxcmi8dNDAXkawv1AFvg2iJMxPm7_t8PM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>44448392554</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.memoirApp</string>
+	<key>PROJECT_ID</key>
+	<string>memoir-app-68893</string>
+	<key>STORAGE_BUCKET</key>
+	<string>memoir-app-68893.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:44448392554:ios:4ba722f92398805390f113</string>
+</dict>
+</plist>

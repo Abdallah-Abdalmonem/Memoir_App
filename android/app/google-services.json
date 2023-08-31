@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "44448392554",
+    "project_id": "memoir-app-68893",
+    "storage_bucket": "memoir-app-68893.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:44448392554:android:624134d442d50d0690f113",
+        "android_client_info": {
+          "package_name": "com.example.memoir_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "44448392554-09ds31bt84ikorru1ldpsc75iresaqqr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD42JsPTpE2-PJRH-iXbfbzKx2A4a1DIPA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "44448392554-09ds31bt84ikorru1ldpsc75iresaqqr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
